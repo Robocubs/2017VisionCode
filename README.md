@@ -1,2 +1,14 @@
 # 2017VisionCode
-Run this code as your CameraServer to use it. I can't write very detailed documentation right now; but I will eventually do so later.
+Finally!
+
+Start the server:
+```bash
+python server.py
+```
+
+Start the client:
+```bash
+python client.py
+```
+
+Modify as necessary.
