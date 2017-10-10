@@ -6,7 +6,7 @@ ZeroMQ-based server for OpenCV. Does the following:
 3. Create a ZeroMQ context and socket.
 4. Bind the context to a local address.
 5. Run the pipeline.
-6. Await connections and return vision when needed.
+6. Await connections and return vision results when needed.
 
 Each step is annotated with the number of the above list.
 """
@@ -31,7 +31,7 @@ try:
         message = socket.recv() # Step 6
         print("Recieved request: ", message)
         pp.pprint(gp.filter_contours_output)
-        socket.send_string(str(gp.filter_contours_output))
+        socket.send_json(gp.filter_contours_output)
 except KeyboardInterrupt:
     pass
 os.system("clear")
