@@ -6,3 +6,4 @@ for i in $(ls test_images); do
 		echo -e "$(tput setaf 4)$i\t$(tput setaf 2)✔"
 	fi
 done
+rm -rf __pycache__
