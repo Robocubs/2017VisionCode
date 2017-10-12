@@ -1,5 +1,5 @@
 # 2017VisionCode
-Finally!
+Finally working... 9 weeks after the season ended :expressionless:
 
 The server uses ZeroMQ to communicate with any client.
 
@@ -20,7 +20,7 @@ python client.py
 To test any modifications to the algorithm before pushing, run the test script:
 
 ```bash
-./run_tests.sh
+python coverage.py
 ```
 
 The final goal is to have all 56 images covered by the algorithm defined in `Pipeline.py`.
