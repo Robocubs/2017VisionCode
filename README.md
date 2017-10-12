@@ -1,6 +1,8 @@
 # 2017VisionCode
 Finally working... 9 weeks after the season ended :expressionless:
 
+[CVCov](badge.svg)
+
 The server uses ZeroMQ to communicate with any client.
 
 Start the server:
