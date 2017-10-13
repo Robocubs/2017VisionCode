@@ -2,6 +2,7 @@ import cv2
 import os
 import sys
 import json
+import datetime
 from Pipeline import GripPipeline
 from pprint import PrettyPrinter
 from colorama import init, Fore
@@ -10,6 +11,7 @@ def percentage(part, whole):
 init()
 gp = GripPipeline()
 pp = PrettyPrinter()
+now = datetime.datetime.now()
 returns = {}
 report = {}
 passes = 0
@@ -25,16 +27,19 @@ for x, y in returns.items():
 		report[x] = [False, y]
 	else:
 		contours = []
+		amount_contours = 0
 		for i, val in enumerate(y):
 			contours.append(val.tolist())
-		report[x] = [True, contours]
+			amount_contours = amount_contours + 1
+		report[x] = [True, contours, amount_contours]
 		passes = passes + 1
 # Add stats to JSON.
 report["stats"] = {
 	"passes": passes,
 	"fails": total - passes,
 	"total": total,
-	"percentage": percentage(passes, total)
+	"percentage": percentage(passes, total),
+	"timestamp": now.strftime("%Y-%m-%d %H:%M")
 }
 # Below we generate a coverage report as `cvcov.json`. We also generate a non-expanded file.
 with open("cvcov.json", "w") as file:
