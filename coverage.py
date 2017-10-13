@@ -4,13 +4,11 @@ import sys
 import json
 import datetime
 from Pipeline import GripPipeline
-from pprint import PrettyPrinter
 from colorama import init, Fore
 def percentage(part, whole):
 	return int(100 * int(part) / int(whole))
 init()
 gp = GripPipeline()
-pp = PrettyPrinter()
 now = datetime.datetime.now()
 returns = {}
 report = {}
