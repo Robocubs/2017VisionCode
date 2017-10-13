@@ -1,8 +1,4 @@
-import cv2
-import os
-import sys
-import json
-import datetime
+import cv2, os, sys, json, datetime
 from Pipeline import GripPipeline
 from colorama import init, Fore
 def percentage(part, whole):
