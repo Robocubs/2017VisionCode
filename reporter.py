@@ -3,7 +3,6 @@ from yattag import Doc
 doc, tag, text = Doc().tagtext()
 with open("cvcov.json") as data:
 	d = json.load(data)
-	del d["stats"]
 	with tag("html"):
 		with tag("head"):
 			with tag("title"):
@@ -24,13 +23,16 @@ with open("cvcov.json") as data:
 					with tag("tr"):
 						with tag("td"):
 							with tag("center"):
-								text(key)
+								with tag("h4"):
+									text(key)
 						with tag("td"):
 							with tag("center"):
 								if value[0] == True:
-									text("✔")
+									with tag("h1", style="color: green"):
+										text("✔")
 								else:
-									text("✘")
+									with tag("h1", style="color: red"):
+										text("✘")
 						with tag("td"):
 							with tag("center"):
 								doc.stag("img", src=str(value[1]))

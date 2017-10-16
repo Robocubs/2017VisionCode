@@ -4,7 +4,8 @@ from colorama import init, Fore
 def percentage(part, whole):
 	return int(100 * int(part) / int(whole))
 init()
-gp = GripPipeline()
+gp1 = GripPipeline(True)
+gp2 = GripPipeline(False)
 now = datetime.datetime.now()
 returns = {}
 report = {}
@@ -13,8 +14,12 @@ total = 0
 for i in os.listdir("test_images"):
 	total = total + 1
 	cap = cv2.imread("test_images/" + i)
-	gp.process(cap)
-	returns[i] = gp.filter_contours_output
+	if i.startswith("red_"):
+		gp2.process(cap)
+		returns[i] = gp2.filter_contours_output
+	else:
+		gp1.process(cap)
+		returns[i] = gp1.filter_contours_output
 print(Fore.YELLOW + "Running CVCov...")
 for x, y in returns.items():
 	if y == []:
@@ -25,14 +30,6 @@ for x, y in returns.items():
 		img = cv2.imencode(".jpg", new)
 		report[x] = [True, "data:image/jpeg;base64," + str(base64.b64encode(img[1]), "utf-8")]
 		passes = passes + 1
-# Add stats to JSON.
-report["stats"] = {
-	"passes": passes,
-	"fails": total - passes,
-	"total": total,
-	"percentage": percentage(passes, total),
-	"timestamp": now.strftime("%Y-%m-%d %H:%M")
-}
 # Below we generate a coverage report as `cvcov.json`.
 with open("cvcov.json", "w") as file:
 	file.write(json.dumps(report, sort_keys=True))
