@@ -39,12 +39,12 @@ class GripPipeline:
             self.__filter_contours_contours = self.find_contours_output
             self.__filter_contours_min_area = 20.0
             self.__filter_contours_min_perimeter = 0.0
-            self.__filter_contours_min_width = 0.0
-            self.__filter_contours_max_width = 99.0
-            self.__filter_contours_min_height = 50.0
+            self.__filter_contours_min_width = 40.0
+            self.__filter_contours_max_width = 200.0
+            self.__filter_contours_min_height = 0.0
             self.__filter_contours_max_height = 1000
             self.__filter_contours_solidity = [0, 100]
-            self.__filter_contours_max_vertices = 1000000
+            self.__filter_contours_max_vertices = 100000
             self.__filter_contours_min_vertices = 0
             self.__filter_contours_min_ratio = 0
             self.__filter_contours_max_ratio = 1000
