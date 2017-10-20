@@ -1,11 +1,5 @@
 <grip:Pipeline>
   <sources>
-    <grip:ImageFile>
-      <property name="path" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH1ftD0Angle50Brightness.jpg"/>
-    </grip:ImageFile>
-    <grip:ImageFile>
-      <property name="path" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH0ftD0Angle50Brightness.jpg"/>
-    </grip:ImageFile>
   </sources>
   <steps>
     <grip:Step name="RGB Threshold">
@@ -28,7 +22,7 @@
           <double>255.0</double>
         </value>
       </grip:Input>
-      <grip:Output step="0" socket="0" previewed="true"/>
+      <grip:Output step="0" socket="0" previewed="false"/>
     </grip:Step>
     <grip:Step name="Find Contours">
       <grip:Input step="1" socket="0"/>
@@ -46,7 +40,7 @@
         <value>0.0</value>
       </grip:Input>
       <grip:Input step="2" socket="3">
-        <value>40.0</value>
+        <value>20.0</value>
       </grip:Input>
       <grip:Input step="2" socket="4">
         <value>200.0</value>
@@ -80,22 +74,22 @@
   </steps>
   <connections>
     <grip:Connection>
-      <grip:Output step="0" socket="0" previewed="true"/>
-      <grip:Input step="1" socket="0"/>
+      <grip:Output step="1" socket="0" previewed="true"/>
+      <grip:Input step="2" socket="0"/>
     </grip:Connection>
     <grip:Connection>
       <grip:Output source="0" socket="0" previewed="true"/>
       <grip:Input step="0" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output step="1" socket="0" previewed="true"/>
-      <grip:Input step="2" socket="0"/>
+      <grip:Output step="0" socket="0" previewed="false"/>
+      <grip:Input step="1" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>
-    <teamNumber>0</teamNumber>
-    <publishAddress>roboRIO-0-FRC.local</publishAddress>
-    <deployAddress>roboRIO-0-FRC.local</deployAddress>
+    <teamNumber>1701</teamNumber>
+    <publishAddress>roboRIO-1701-FRC.local</publishAddress>
+    <deployAddress>roboRIO-1701-FRC.local</deployAddress>
     <deployDir>/home/lvuser</deployDir>
     <deployUser>lvuser</deployUser>
     <deployJavaHome>/usr/local/frc/JRE/</deployJavaHome>

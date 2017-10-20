@@ -22,8 +22,8 @@ class GripPipeline:
         self.__find_contours_input = self.rgb_threshold_output
         self.__find_contours_external_only = False
         self.find_contours_output = None
+        self.__filter_contours_contours = self.find_contours_output
         if blue == True:
-            self.__filter_contours_contours = self.find_contours_output
             self.__filter_contours_min_area = 20.0
             self.__filter_contours_min_perimeter = 0
             self.__filter_contours_min_width = 23.0
@@ -36,18 +36,17 @@ class GripPipeline:
             self.__filter_contours_min_ratio = 0
             self.__filter_contours_max_ratio = 1000
         else:
-            self.__filter_contours_contours = self.find_contours_output
             self.__filter_contours_min_area = 20.0
             self.__filter_contours_min_perimeter = 0.0
-            self.__filter_contours_min_width = 40.0
+            self.__filter_contours_min_width = 20.0
             self.__filter_contours_max_width = 200.0
             self.__filter_contours_min_height = 0.0
-            self.__filter_contours_max_height = 1000
-            self.__filter_contours_solidity = [0, 100]
-            self.__filter_contours_max_vertices = 100000
-            self.__filter_contours_min_vertices = 0
-            self.__filter_contours_min_ratio = 0
-            self.__filter_contours_max_ratio = 1000
+            self.__filter_contours_max_height = 1000.0
+            self.__filter_contours_solidity = [0.0, 100]
+            self.__filter_contours_max_vertices = 100000.0
+            self.__filter_contours_min_vertices = 0.0
+            self.__filter_contours_min_ratio = 0.0
+            self.__filter_contours_max_ratio = 1000.0
         self.filter_contours_output = None
     def process(self, source0):
         """

@@ -15,10 +15,10 @@ import sys
 import os
 from pprint import PrettyPrinter
 import zmq
-from Pipeline import GripPipeline
+from .. import Pipeline
 os.system("clear")
 print("Welcome to 127.0.0.1.")
-gp = GripPipeline() # Step 2
+gp = Pipeline.GripPipeline() # Step 2
 pp = PrettyPrinter()
 cap = cv2.VideoCapture(0)
 context = zmq.Context() # Step 3
