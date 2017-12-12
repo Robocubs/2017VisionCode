@@ -1,67 +1,83 @@
 <grip:Pipeline>
   <sources>
+    <grip:MultiImageFile>
+      <property name="path[9]" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH2ftD0Angle50Brightness.jpg"/>
+      <property name="path[10]" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH1ftD0Angle50Brightness.jpg"/>
+      <property name="path[6]" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH3ftD0Angle50Brightness.jpg"/>
+      <property name="path[3]" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH8ftD1Angle50Brightness_prob.jpg"/>
+      <property name="path[0]" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH10ftD2Angle50Brightness_prob.jpg"/>
+      <property name="path[8]" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH2ftD1Angle50Brightness.jpg"/>
+      <property name="index" value="0"/>
+      <property name="numImages" value="12"/>
+      <property name="path[5]" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH7ftD0Angle50Brightness_prob.jpg"/>
+      <property name="path[2]" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH8ftD2Angle50Brightness_prob.jpg"/>
+      <property name="path[11]" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH0ftD0Angle50Brightness.jpg"/>
+      <property name="path[7]" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH2ftD2Angle50Brightness.jpg"/>
+      <property name="path[4]" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH8ftD0Angle50Brightness_prob.jpg"/>
+      <property name="path[1]" value="/home/nicholas/Documents/Programming/Python/2017VisionCode/test_images/red_1ftH10ftD1Angle50Brightness_prob.jpg"/>
+    </grip:MultiImageFile>
   </sources>
   <steps>
     <grip:Step name="RGB Threshold">
       <grip:Input step="0" socket="0"/>
       <grip:Input step="0" socket="1">
         <value>
-          <double>162.81474820143885</double>
-          <double>255.0</double>
+          <double>94.01978417266189</double>
+          <double>200.88285229202037</double>
         </value>
       </grip:Input>
       <grip:Input step="0" socket="2">
         <value>
-          <double>45.86330935251798</double>
-          <double>142.43633276740238</double>
+          <double>41.276978417266186</double>
+          <double>144.60101867572158</double>
         </value>
       </grip:Input>
       <grip:Input step="0" socket="3">
         <value>
-          <double>0.0</double>
-          <double>255.0</double>
+          <double>41.276978417266186</double>
+          <double>131.61290322580643</double>
         </value>
       </grip:Input>
-      <grip:Output step="0" socket="0" previewed="false"/>
+      <grip:Output step="0" socket="0" previewed="true"/>
     </grip:Step>
     <grip:Step name="Find Contours">
       <grip:Input step="1" socket="0"/>
       <grip:Input step="1" socket="1">
-        <value>false</value>
+        <value>true</value>
       </grip:Input>
       <grip:Output step="1" socket="0" previewed="true"/>
     </grip:Step>
     <grip:Step name="Filter Contours">
       <grip:Input step="2" socket="0"/>
       <grip:Input step="2" socket="1">
-        <value>20.0</value>
+        <value>40.0</value>
       </grip:Input>
       <grip:Input step="2" socket="2">
-        <value>0.0</value>
+        <value>80.0</value>
       </grip:Input>
       <grip:Input step="2" socket="3">
-        <value>20.0</value>
+        <value>0.0</value>
       </grip:Input>
       <grip:Input step="2" socket="4">
         <value>200.0</value>
       </grip:Input>
       <grip:Input step="2" socket="5">
-        <value>0.0</value>
+        <value>40.0</value>
       </grip:Input>
       <grip:Input step="2" socket="6">
         <value>1000.0</value>
       </grip:Input>
       <grip:Input step="2" socket="7">
         <value>
-          <double>0.0</double>
+          <int>0</int>
           <int>100</int>
         </value>
       </grip:Input>
       <grip:Input step="2" socket="8">
-        <value>100000.0</value>
+        <value>140.0</value>
       </grip:Input>
       <grip:Input step="2" socket="9">
-        <value>0.0</value>
+        <value>10.0</value>
       </grip:Input>
       <grip:Input step="2" socket="10">
         <value>0.0</value>
@@ -82,14 +98,14 @@
       <grip:Input step="0" socket="0"/>
     </grip:Connection>
     <grip:Connection>
-      <grip:Output step="0" socket="0" previewed="false"/>
+      <grip:Output step="0" socket="0" previewed="true"/>
       <grip:Input step="1" socket="0"/>
     </grip:Connection>
   </connections>
   <settings>
-    <teamNumber>1701</teamNumber>
-    <publishAddress>roboRIO-1701-FRC.local</publishAddress>
-    <deployAddress>roboRIO-1701-FRC.local</deployAddress>
+    <teamNumber>0</teamNumber>
+    <publishAddress>roboRIO-0-FRC.local</publishAddress>
+    <deployAddress>roboRIO-0-FRC.local</deployAddress>
     <deployDir>/home/lvuser</deployDir>
     <deployUser>lvuser</deployUser>
     <deployJavaHome>/usr/local/frc/JRE/</deployJavaHome>
